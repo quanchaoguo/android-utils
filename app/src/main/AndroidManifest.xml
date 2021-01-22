@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bluetooth">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+<!--    使用蓝牙需要该权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+<!--    使用扫描和设置需要权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+<!--    Android 6.0以上声明一下两个权限之一即可。声明位置权限，不然扫描或者发现蓝牙功能用不了哦-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="MTA_CHANNEL" android:value="${MTA_CHANNEL_VALUE}"/>
+
+        <activity
+            android:name=".ScanActivity"
+            android:screenOrientation="fullSensor"></activity>
+    </application>
+
+</manifest>

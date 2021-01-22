@@ -1,0 +1,4 @@
+include ':module'
+include ':sdk'
+rootProject.name='blueTooth'
+include ':app'

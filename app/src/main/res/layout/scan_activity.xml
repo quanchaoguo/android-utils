@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScanActivity">
+
+    <Button
+        android:id="@+id/request_promiss"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开蓝牙"
+        android:layout_marginLeft="20dp"
+        android:onClick="openBLE"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </Button>
+
+    <Button
+        android:id="@+id/open_blue"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭蓝牙"
+        android:onClick="closeBLE"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/request_promiss">
+    </Button>
+
+
+
+    <Button
+        android:id="@+id/scan_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="扫描蓝牙"
+        android:onClick="scanBLE"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/open_blue">
+    </Button>
+
+    <Button
+        android:id="@+id/connect_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="关闭扫描"
+        android:onClick="stopScanBLE"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/scan_blue">
+    </Button>
+
+    <Button
+        android:id="@+id/send_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="连接蓝牙"
+        android:onClick="connect"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/connect_blue"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </Button>
+
+    <Button
+        android:id="@+id/broad_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="指定连接"
+        android:onClick="connectAddress"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/connect_blue"
+        app:layout_constraintLeft_toRightOf="@+id/send_data">
+    </Button>
+
+    <Button
+        android:id="@+id/is_s_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="关闭释放"
+        android:onClick="closeConnect"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/scan_blue"
+        app:layout_constraintLeft_toRightOf="@+id/broad_blue">
+    </Button>
+
+    <Button
+        android:id="@+id/close_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="启动广播"
+        android:onClick="initBroadcast"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/connect_blue"
+        app:layout_constraintLeft_toRightOf="@+id/is_s_blue">
+    </Button>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
