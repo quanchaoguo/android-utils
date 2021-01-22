@@ -3,6 +3,10 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'maven'
+
+
+
 android {
     compileSdkVersion 29
 
@@ -31,8 +35,16 @@ android {
     }
 }
 
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.quanchaoguo'
+uploadArchives {
+    repositories.mavenDeployer {
+        //Github 本地库文件夹路径
+        def depath = file('/Users/用户名/MyMaven')
+        repository(url: "file://${depath.absolutePath}")
+        pom.groupId = "com.app.xz.library";
+        pom.artifactId = "librarytest";
+        pom.version = "1.0.0";
+    }
+}
 
 dependencies {
 
